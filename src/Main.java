@@ -14,8 +14,7 @@ public class Main {
         while (currentLogin == null) {
             System.out.println("""
                     Login Menu
-                    Enter Username:
-                    """);
+                    Enter Username:""");
 
             username = scanner.nextLine();
             if (username.isBlank()) {
