@@ -4,8 +4,8 @@ public class Main {
     public static void main(String[] args) {
 
         //making test profiles saved.
-        Profile.getProfileArray()[0] = new Profile("Admin", "admin123");
-        Profile.getProfileArray()[1] = new Profile("MarioG", "QwErTy123");
+        Profile.getProfileArray()[0] = new Profile("Luigi", "fakeman123");
+        Profile.getProfileArray()[1] = new Admin("MarioG", "QwErTy123");
         Scanner scanner = new Scanner(System.in);
         String username;
         String password;
