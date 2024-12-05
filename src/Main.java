@@ -39,6 +39,9 @@ public class Main {
                         """);
                 currentLogin = new Profile(username, password);
                 currentLogin.setLoggedIn(true);
+                //adds profile to the last index of the array
+                //realistically would add to the last empty index
+                Profile.addProfile(currentLogin);
 
             }else if (profileExists && profile.checkPassword(password)) {
                 currentLogin = Profile.getProfile(attemptedLogin.getUsername());
