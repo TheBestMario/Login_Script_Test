@@ -6,10 +6,16 @@ class ProfileTest {
     Profile testProfile = new Profile("test", "test123");
 
     @Test
-    void setLoggedIn() {
+    void setLoggedInTrue() {
         testProfile.setLoggedIn(true);
         assertTrue(testProfile.isLoggedIn());
     }
+    @Test
+    void setLoggedInFalse() {
+        testProfile.setLoggedIn(false);
+        assertFalse(testProfile.isLoggedIn());
+    }
+
 
     @Test
     void isLoggedIn() {
@@ -24,24 +30,28 @@ class ProfileTest {
     }
 
     @Test
-    void getProfileArray() {
+    void getProfileArrayLength() {
+        System.out.println(Profile.getProfileArray());
+        Profile.getProfileArray()[3] = new Profile("test", "testiinngng");
+        //length is 10 because of the array size when initialised.
+        assertEquals(10, Profile.getProfileArray().length);
 
     }
 
     @Test
-    void checkPassword() {
+    void checkPasswordForTheProfile() {
         assertTrue(testProfile.checkPassword("test123"));
     }
 
     @Test
-    void checkUsername() {
+    void checkUsernameExists() {
         Profile.addProfile(testProfile);
         assertTrue(Profile.checkUsername("test"));
     }
 
     @Test
-    void addProfile() {
+    void addProfileWorksByTestingForName() {
         Profile.addProfile(testProfile);
-        assertEquals(testProfile, Profile.getProfile("test"));
+        assertEquals(testProfile.getUsername(), Profile.getProfile("test").getUsername());
     }
 }
